@@ -5,19 +5,25 @@ import Formulario from './components/Formulario/Formulario';
 
 function App() {
 
-  const [ categoria, guardarCategoria ] = useState('')
+  const [ categoria, guardarCategoria ] = useState('');
+
+  const [ idioma, guardarIdioma ] = useState('');
+
+  const [ news, guardarNews ] = useState([])
 
   useEffect(() => {
     const consultarApi = async() => {
-        const url=`https://newsapi.org/v2/top-headlines?country=us&category=${categoria}&apiKey=97a3c34979454084ba1c3b89bd8711ea`;
+
+        const url=`https://newsapi.org/v2/top-headlines?country=${idioma}&category=${categoria}&apiKey=97a3c34979454084ba1c3b89bd8711ea`;
 
         const respuesta= await fetch(url);
         const noticias = await respuesta.json();
 
-        console.log(noticias)
+        console.log(noticias.articles)
+        guardarNews(noticias.articles)
     }
     consultarApi()
-  }, [categoria])
+  }, [idioma, categoria])
 
   return (
     <Fragment>
@@ -28,7 +34,10 @@ function App() {
 
       <Formulario
         guardarCategoria={guardarCategoria}
+        guardarIdioma={guardarIdioma}
        />
+
+
 
     </Fragment>
   );
