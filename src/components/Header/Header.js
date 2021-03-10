@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Logo from '../../assets/images/thenews-international.jpg'
 
-export default function Header({titulo}) {
+export default function Header() {
     return (
         <div>
             <nav>
-                <a href="">
-                    <h1>{titulo}</h1>
+                <a href="/">
+                    <img src={Logo} />
                 </a>
             </nav>
         </div>

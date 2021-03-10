@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import Formulario from './components/Formulario/Formulario';
+import ListadoNews from './components/News/ListadoNews';
 
 
 function App() {
@@ -28,13 +29,15 @@ function App() {
   return (
     <Fragment>
 
-      <Header 
-        titulo= 'A.A. News'
-      />
+      <Header />
 
       <Formulario
         guardarCategoria={guardarCategoria}
         guardarIdioma={guardarIdioma}
+       />
+
+       <ListadoNews
+          news={news}
        />
 
 
