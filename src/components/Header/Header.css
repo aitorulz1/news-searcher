@@ -1,0 +1,16 @@
+.header-container {
+    position: relative;
+    display: table;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    padding: 2.5% 0%;
+}
+
+.header-container img {
+    width: 100%;
+    max-width: 500px;
+}

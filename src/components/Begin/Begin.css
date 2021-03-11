@@ -1,0 +1,27 @@
+.begin-container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    display: table;
+    height: Calc(100vh - 300px);
+}
+
+.begin-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.instruction {
+    font-family: fantasy;
+    letter-spacing: 2px;
+}
+
+.sub-instruction {
+    padding: 5% 0%;
+}
+
+.begin-button {
+    margin-top: 5%;
+}

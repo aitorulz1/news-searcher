@@ -2,6 +2,9 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import Formulario from './components/Formulario/Formulario';
 import ListadoNews from './components/News/ListadoNews';
+import Begin from './components/Begin/Begin';
+
+import './App.css';
 
 
 function App() {
@@ -10,7 +13,9 @@ function App() {
 
   const [ idioma, guardarIdioma ] = useState('');
 
-  const [ news, guardarNews ] = useState([])
+  const [ news, guardarNews ] = useState([]);
+
+  const [ form, showForm ] = useState(false);
 
   useEffect(() => {
     const consultarApi = async() => {
@@ -27,14 +32,29 @@ function App() {
   }, [idioma, categoria])
 
   return (
-    <Fragment>
+    <div className="paper">
 
-      <Header />
+      <Header 
+        
+      />
 
-      <Formulario
-        guardarCategoria={guardarCategoria}
-        guardarIdioma={guardarIdioma}
-       />
+      {
+        !form ?
+
+        <Begin 
+          showForm={showForm}
+        />
+        
+        :
+
+        <Formulario
+          guardarCategoria={guardarCategoria}
+          guardarIdioma={guardarIdioma}
+          showForm={showForm}
+        />
+
+      }
+
 
        <ListadoNews
           news={news}
@@ -42,7 +62,7 @@ function App() {
 
 
 
-    </Fragment>
+    </div>
   );
 }
 

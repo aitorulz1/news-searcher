@@ -2,6 +2,8 @@ import React from 'react';
 import useSelect from '../Hooks/useSelect';
 import selectCountry from '../Hooks/selectCountry';
 
+import './Formulario.css';
+
 export default function Formulario({guardarCategoria, guardarIdioma}) {
     
     const OPCIONES = [
@@ -37,25 +39,43 @@ export default function Formulario({guardarCategoria, guardarIdioma}) {
 
         guardarCategoria(categoria);
         guardarIdioma(lenguage);
+
     }
 
     
     return (
-        <div>
+        <div className="form-container">
 
-            <SelectCountry />
+            <div className="form-content">
 
-            <SelectNoticias />
 
-            <form
-                onSubmit={onSubmit}
-            >
-                <input 
-                    type='submit'
-                    className='form-button'
-                    value='Buscar Noticia'
-                />
-            </form>
+                <div className="input-country">
+                    <SelectCountry />
+                </div>
+
+                <div className="input-topic">
+                    <SelectNoticias />
+                </div>
+
+
+            
+                    <div className="button-search">
+
+                        <form
+                            onSubmit={onSubmit}
+                        >
+                            <input 
+                                type='submit'
+                                className='form-button'
+                                value='Buscar Noticia'
+                            />
+
+                        </form>
+
+                    </div>
+
+
+            </div>
 
         </div>
     )
