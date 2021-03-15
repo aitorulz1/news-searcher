@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../assets/images/thenews-international.jpg';
+import Logo from '../../assets/images/logo.png';
 
 import './Header.css';
 

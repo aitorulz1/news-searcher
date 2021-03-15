@@ -1,0 +1,70 @@
+.new-card {
+    padding: 00px 0.5% 50px 0.5%;
+    display: inline-grid;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.image-container img{
+    width: 100%;
+    border-radius: 15px;
+    -webkit-box-shadow: inset 0px 6px 5px 4px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    inset 0px 6px 5px 4px rgba(50, 50, 50, 0.75);
+    box-shadow:         inset 0px 6px 5px 4px rgba(50, 50, 50, 0.75);
+}
+
+
+.title {
+    font-size: 16px;
+}
+
+.author {
+    font-family: sans-serif;
+    font-size: 14px;  
+    padding: 0px 0px 20px 0px;
+}
+
+.autho-name {
+    font-size: 15px;  
+    font-weight: 700;
+}
+
+.description {
+    font-family: sans-serif;
+    font-size: 15px;  
+    font-weight: 700;
+    padding: 0px 0px 20px 0px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+.content {
+    font-family: sans-serif;
+    font-size: 14px;  
+    font-weight: 100;
+    padding: 0px 0px 20px 0px;
+    line-height: 1.5;
+}
+
+.goto {
+    text-align: center;
+    width: 100%;
+    margin: 5% 0%;
+    margin-top: -4px;
+    border-radius: 10px;
+    background: #e0e0e0;
+    box-shadow: 2px 2px 6px #bebebe, -2px -2px 6px #ffffff;
+    padding: 5px 50px;
+    width: auto;
+    font-family: sans-serif;
+}
+
+.goto a {
+    text-decoration: none;
+    color: rgb(0, 89, 255);
+    text-transform:lowercase;
+}
+

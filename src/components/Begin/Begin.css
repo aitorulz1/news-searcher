@@ -23,5 +23,22 @@
 }
 
 .begin-button {
+    width: calc(100% - 10px);
+    outline: none;
+    border-radius: 35px;
+    border-style: none;
+    color: #000;
+    border-radius: 36px;
+    /*background: #ffffff;
+    box-shadow:  2px 2px 4px #aaa9a9,
+             -2px -2px 4px #f5f5f5;*/
+             background: #e0e0e0;
+             box-shadow:  2px 2px 6px #bebebe,
+                          -2px -2px 6px #ffffff;
+    padding: 15px 0px 15px 0px;
+    margin-top: 20px;
+    font-size: 14px;
+    text-shadow: 0 0 black;
     margin-top: 5%;
 }
+

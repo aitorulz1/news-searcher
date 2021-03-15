@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Formulario from './components/Formulario/Formulario';
 import ListadoNews from './components/News/ListadoNews';
 import Begin from './components/Begin/Begin';
+import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 
 import './App.css';
 
@@ -16,6 +17,10 @@ function App() {
   const [ news, guardarNews ] = useState([]);
 
   const [ form, showForm ] = useState(false);
+
+  const [ clickbuscar, guardarClickBuscar ] = useState(false);
+
+
 
   useEffect(() => {
     const consultarApi = async() => {
@@ -38,6 +43,18 @@ function App() {
         
       />
 
+      { clickbuscar ?
+        <Breadcrumbs 
+          categoria={categoria}
+          idioma={idioma}
+          guardarClickBuscar={guardarClickBuscar}
+
+        />
+      :
+      null
+      }
+    
+
       {
         !form ?
 
@@ -51,6 +68,8 @@ function App() {
           guardarCategoria={guardarCategoria}
           guardarIdioma={guardarIdioma}
           showForm={showForm}
+          guardarClickBuscar= {guardarClickBuscar}
+          clickbuscar= {clickbuscar}
         />
 
       }

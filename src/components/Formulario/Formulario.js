@@ -4,7 +4,7 @@ import selectCountry from '../Hooks/selectCountry';
 
 import './Formulario.css';
 
-export default function Formulario({guardarCategoria, guardarIdioma}) {
+export default function Formulario({guardarCategoria, guardarIdioma, guardarClickBuscar, clickbuscar}) {
     
     const OPCIONES = [
         {value:'general', label:'General'},
@@ -34,48 +34,64 @@ export default function Formulario({guardarCategoria, guardarIdioma}) {
     // Usamos Custom Hook selectCountry
     const [ lenguage, SelectCountry ] = selectCountry('us', OPTIONS);
 
+    const breadTrue = () => {
+        guardarClickBuscar(true)
+    }
+
     const onSubmit = e => {
         e.preventDefault();
 
         guardarCategoria(categoria);
         guardarIdioma(lenguage);
-
+        breadTrue();
     }
+
 
     
     return (
+
         <div className="form-container">
 
-            <div className="form-content">
+        {clickbuscar ?
+        
+        null
+        :
+        
+        <div className="form-content">
 
 
-                <div className="input-country">
-                    <SelectCountry />
+            <div className="input-country">
+                <SelectCountry />
+            </div>
+
+            <div className="input-topic">
+                <SelectNoticias />
+            </div>
+
+
+
+                <div className="button-search">
+
+                    <form
+                        onSubmit={onSubmit}
+                    >
+                        <input 
+                            type='submit'
+                            className='form-button'
+                            value='Buscar Noticia'
+                        />
+
+                    </form>
+
                 </div>
-
-                <div className="input-topic">
-                    <SelectNoticias />
-                </div>
-
-
-            
-                    <div className="button-search">
-
-                        <form
-                            onSubmit={onSubmit}
-                        >
-                            <input 
-                                type='submit'
-                                className='form-button'
-                                value='Buscar Noticia'
-                            />
-
-                        </form>
-
-                    </div>
 
 
             </div>
+
+        }
+
+    
+            
 
         </div>
     )

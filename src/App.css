@@ -1,3 +1,7 @@
-/*.paper{
-    background: linear-gradient(180deg, rgba(152,151,151,1) 0%, rgba(203,202,202,1) 8%, rgba(244,244,244,1) 100%);
-}*/
+.paper{
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe;
+    width: 100%;
+    min-height: 98vh;
+    display: table;
+}
