@@ -16,10 +16,12 @@
 .instruction {
     font-family: fantasy;
     letter-spacing: 2px;
+    line-height: 1.5;
 }
 
 .sub-instruction {
-    padding: 5% 0%;
+    padding: 35px 0%;
+    line-height: 1.5;
 }
 
 .begin-button {
@@ -40,5 +42,11 @@
     font-size: 14px;
     text-shadow: 0 0 black;
     margin-top: 5%;
+    cursor: pointer;
+}
+
+.begin-button:hover {
+             background: #e0e0e0;
+             box-shadow: inset -2px -2px 6px #bebebe, 0px 0px 1px #ffffff;
 }
 

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+
+import Logo from '../../assets/images/the-news.jpg'
 
 
 import './New.css';
@@ -11,11 +13,26 @@ export default function New({noticia}) {
         var str = {description};
         if(str.length > 10) {
             str = str.substring(0, 10) + '...';
-        }
+        }  
+    };
+
+    var publish = publishedAt.toString().slice(0, 10);
+
+    // If no image...
+    const [ noImage, setNoImage ] = useState(false);
+
+    useEffect(() => {
+
+        const noImage = () => {
+
+            if(!urlToImage) {
+                setNoImage(true)
+            }
         
-    }
-   
-    var publish = publishedAt.toString().slice(0, 10)
+        }
+        noImage();
+
+    }, [noticia])
    
 
     return (
@@ -25,7 +42,14 @@ export default function New({noticia}) {
 
 
             <div className="image-container">
-                <a href={url} target='_blank'><img src={urlToImage} /></a>
+                <a href={url} target='_blank'>
+                {noImage
+                ?
+                <img src={Logo} />
+                :
+                <img src={urlToImage} />
+                }
+                </a>
             </div>
            
             <div className="publishedAt">
